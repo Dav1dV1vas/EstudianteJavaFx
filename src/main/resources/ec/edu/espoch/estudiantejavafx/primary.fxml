@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="18.0"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ec.edu.espoch.estudiantejavafx.PrimaryController"
+      stylesheets="@style.css"
+      styleClass="main-container">
+
+    <children>
+        <Label text="Gestión de Estudiantes" styleClass="header-label"/>
+
+        <HBox spacing="20">
+            <!-- Formulario (7 campos) -->
+            <GridPane hgap="10" vgap="10">
+                <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtId" promptText="Ej: 1" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Nombres:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtNombres" promptText="Ej: Aylin" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Apellidos:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtApellidos" promptText="Ej: Riera" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Carrera:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cbCarrera" promptText="Selecciona..." prefWidth="220"
+                          GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Semestre:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <Spinner fx:id="spSemestre" prefWidth="220"
+                         GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="Nacimiento:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="dpNacimiento" prefWidth="220"
+                            GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="Promedio:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtPromedio" promptText="0 a 10 (ej: 8.5)"
+                           GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <!-- Tabla -->
+            <TableView fx:id="tblEstudiantes" prefWidth="620" styleClass="table-view">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="55"/>
+                    <TableColumn fx:id="colNombres" text="Nombres" prefWidth="120"/>
+                    <TableColumn fx:id="colApellidos" text="Apellidos" prefWidth="120"/>
+                    <TableColumn fx:id="colCarrera" text="Carrera" prefWidth="160"/>
+                    <TableColumn fx:id="colSemestre" text="Sem." prefWidth="60"/>
+                    <TableColumn fx:id="colNacimiento" text="Nacimiento" prefWidth="120"/>
+                    <TableColumn fx:id="colPromedio" text="Prom." prefWidth="70"/>
+                </columns>
+            </TableView>
+        </HBox>
+
+        <!-- Botones pedidos -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Nuevo"    onAction="#nuevo"    styleClass="btn-nuevo"/>
+            <Button text="Guardar"  onAction="#guardar"  styleClass="btn-guardar"/>
+            <Button text="Editar"   onAction="#editar"   styleClass="btn-editar"/>
+            <Button text="Eliminar" onAction="#eliminar" styleClass="btn-eliminar"/>
+            <Button text="Limpiar"  onAction="#limpiar"  styleClass="btn-limpiar"/>
+        </HBox>
+    </children>
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</VBox>
