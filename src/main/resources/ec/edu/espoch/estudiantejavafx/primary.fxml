@@ -43,7 +43,6 @@
                            GridPane.rowIndex="6" GridPane.columnIndex="1"/>
             </GridPane>
 
-
             <TableView fx:id="tblEstudiantes" prefWidth="620" styleClass="table-view">
                 <columns>
                     <TableColumn fx:id="colId" text="ID" prefWidth="55"/>
