@@ -15,7 +15,7 @@
         <Label text="Gestión de Estudiantes" styleClass="header-label"/>
 
         <HBox spacing="20">
-            <!-- Formulario (7 campos) -->
+
             <GridPane hgap="10" vgap="10">
                 <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
                 <TextField fx:id="txtId" promptText="Ej: 1" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
@@ -43,7 +43,6 @@
                            GridPane.rowIndex="6" GridPane.columnIndex="1"/>
             </GridPane>
 
-            <!-- Tabla -->
             <TableView fx:id="tblEstudiantes" prefWidth="620" styleClass="table-view">
                 <columns>
                     <TableColumn fx:id="colId" text="ID" prefWidth="55"/>
@@ -57,7 +56,6 @@
             </TableView>
         </HBox>
 
-        <!-- Botones pedidos -->
         <HBox spacing="10" alignment="CENTER">
             <Button text="Nuevo"    onAction="#nuevo"    styleClass="btn-nuevo"/>
             <Button text="Guardar"  onAction="#guardar"  styleClass="btn-guardar"/>
